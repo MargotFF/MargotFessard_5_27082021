@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
 }
 
 a {
@@ -17,11 +18,15 @@ h1, h4 {
     font-weight: 700!important;
 }
 
+.navbar-title {
+    display: flex;
+}
+
 .navbar-brand > img {
     width: 10rem;
 }
 
-.fa-shopping-bag {
+.fa-shopping-bag, .card-title, .total-amount, .confirmation-title {
     color: #DB4F66;
 }
 
@@ -40,10 +45,6 @@ h1, h4 {
 .card-img {
     height: 16rem;
     object-fit: cover;
-}
-
-.card-title {
-    color: #DB4F66;
 }
 
 .product {
@@ -73,8 +74,7 @@ h1, h4 {
 }
 
 .pink-button:hover {
-    background-color: #F3E8F0;
-    border: 1px solid #F3E8F0;
+    background-color: transparent;
     color: black;
 }
 
@@ -102,7 +102,7 @@ h1, h4 {
     transform: scale(1.1);
 }
 
-.cart-product {
+.cart-product, .cart-counter {
     display: flex;
     align-items: center;
 }
@@ -113,11 +113,6 @@ h1, h4 {
     border-radius: 50%;
     border: 2px solid #F3E8F0;
     object-fit: cover;
-}
-
-.cart-counter {
-    display: flex;
-    align-items: center;
 }
 
 .counter-btn{
@@ -160,13 +155,37 @@ h1, h4 {
     padding: 10px 20px;
 }
 
-.total-amount {
-    color: #DB4F66;
+.confirmation-box {
+    background-color: #F3E8F0;
+    height: fit-content;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fa-paper-plane {
+    font-size: 5rem;
+}
+
+.backhome-btn {
+    width: fit-content;
 }
 
 @media all and (max-width: 991px) {
     .product {
         margin: 2rem 1rem;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .navbar-title {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navbar-title > h1 {
+        margin-bottom: -5px;
     }
 }
 
