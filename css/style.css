@@ -21,6 +21,10 @@ h1, h4 {
     width: 10rem;
 }
 
+.fa-shopping-bag {
+    color: #DB4F66;
+}
+
 .light-hover:hover {
     color: #DB4F66!important;
 }
@@ -41,3 +45,67 @@ h1, h4 {
 .card-title {
     color: #DB4F66;
 }
+
+.product {
+    margin: 5rem auto;
+}
+
+.product-img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-details {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-button {
+    padding: 10px 40px;
+    background-color: #f16179;
+    color: #ffffff;
+    border: 1px solid #f16179;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.product-button:hover {
+    background-color: #F3E8F0;
+    border: 1px solid #F3E8F0;
+    color: black;
+}
+
+.product-price {
+    background-color: #F3E8F0;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px 20px;
+}
+
+.product-color {
+    background-color: #f16179;
+    border-radius: 5px;
+    height: 4rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.product-color:hover {
+    transform: scale(1.05);
+}
+
+@media all and (max-width: 991px) {
+    .product {
+        margin: 2rem 1rem;
+    }
+}
+
+@media all and (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
