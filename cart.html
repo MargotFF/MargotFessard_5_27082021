@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     
-    <title>Ours en peluche faits à la main | Oriteddies by Orinoco</title>
+    <title>Mon panier | Oriteddies by Orinoco</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -32,9 +32,7 @@
               <div id="navbarContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="cart.html">
-                      <i class="fa fa-shopping-bag mr-2"></i>Panier
-                    </a>
+                    <a class="nav-link" href="index.html">Retour à l'accueil</a>
                   </li>
                 </ul>
               </div>
@@ -46,72 +44,79 @@
 
     <!-- END HEADER -->
 
-    <!-- CARDS -->
+    <!-- CART-->
 
     <div class="container">
-      <h4 class="text-center mt-5 mb-4">DÉCOUVREZ NOS PRODUITS</h4>
+      <h4 class="text-center mt-5 mb-5">MON PANIER</h4>
       <div class="row">
-        <div class="col-12 col-lg-4">
-          <div class="card mb-4 shadow card-bg">
-            <a href="product.html">
-              <img src="images/teddy_1.jpg" alt="" class="card-img-top card-img">
-              <div class="card-body">
-                <h5 class="card-title">Winnie</h5>
-                <p class="card-text">Un ours en peluche fait main avec amour dans une matière unique</p>
+        <div class="col-12 col-lg-7">
+          <div class="row">
+            <div class="col-4 cart-product">
+              <img src="images/teddy_1.jpg" class="cart-img mr-3"/>
+              <h6>Winnie</h6>
+            </div>
+            <div class="col-4 cart-counter">
+              <div class="counter-btn">-</div>
+              <div class="counter-total mx-3">1</div>
+              <div class="counter-btn">+</div>
+            </div>
+            <div class="col-4 cart-price">
+              <div class="cart-amount">50€</div>
+              <a href="#" class="cart-remove">Retirer du panier</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="cart-total mt-5">
+                <div class="total-title mr-2">Total de ma commande :</div>
+                <div class="total-amount h5 mb-0">50€</div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4">
-          <div class="card mb-4 shadow card-bg">
-            <a href="">
-              <img src="images/teddy_1.jpg" alt="" class="card-img-top card-img">
-              <div class="card-body">
-                <h5 class="card-title">Winnie</h5>
-                <p class="card-text">Un ours en peluche fait main avec amour dans une matière unique</p>
+        <div class="col-12 col-lg-5">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">Prénom</label>
+                <input type="text" class="form-control" id="inputFirstName" required>
               </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="card mb-4 shadow card-bg">
-            <a href="">
-              <img src="images/teddy_1.jpg" alt="" class="card-img-top card-img">
-              <div class="card-body">
-                <h5 class="card-title">Winnie</h5>
-                <p class="card-text">Un ours en peluche fait main avec amour dans une matière unique</p>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">Nom</label>
+                <input type="text" class="form-control" id="inputLastName" required>
               </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-lg-4">
-          <div class="card mb-4 shadow card-bg">
-            <a href="">
-              <img src="images/teddy_1.jpg" alt="" class="card-img-top card-img">
-              <div class="card-body">
-                <h5 class="card-title">Winnie</h5>
-                <p class="card-text">Un ours en peluche fait main avec amour dans une matière unique</p>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Adresse</label>
+              <input type="text" class="form-control" id="inputAddress" required>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Complément d'adresse</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Bâtiment, appartement, étage">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputZip">Code postal</label>
+                <input type="text" class="form-control" id="inputZip" required>
               </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-lg-4">
-          <div class="card mb-4 shadow card-bg">
-            <a href="">
-              <img src="images/teddy_1.jpg" alt="" class="card-img-top card-img">
-              <div class="card-body">
-                <h5 class="card-title">Winnie</h5>
-                <p class="card-text">Un ours en peluche fait main avec amour dans une matière unique</p>
+              <div class="form-group col-md-8">
+                <label for="inputCity">Ville</label>
+                <input type="text" class="form-control" id="inputCity" required>
               </div>
+            </div>
+            <a href="#">
+              <button class="pink-button" type="submit">Payer ma commande</button>
             </a>
-          </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- END CARDS -->
+    <!-- END CART -->
 
     <!-- FOOTER -->
 
