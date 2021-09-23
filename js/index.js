@@ -21,7 +21,9 @@ function fetchTeddies() {
     });
 }
 
+// Display each teddy and its details in a cards grid
 function displayTeddies(teddy) {
+   // Get HTML element contained in teddies cards
     let cardList = document.querySelector(".teddies");
     
     // Create HTML elements contained in teddies cards
@@ -36,7 +38,7 @@ function displayTeddies(teddy) {
     let cardText = document.createElement("p");
 
     // Set the related attribute value to the HTML elements
-    cardLink.href = "../product.html?id=" + teddy._id;
+    cardLink.href = "product.html?id=" + teddy._id;
     cardImage.src = teddy.imageUrl;
     // cardTitle.appendChild(document.createTextNode(teddy.name));
     cardTitle.textContent = teddy.name;
