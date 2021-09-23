@@ -18,12 +18,12 @@ h1, h4 {
     font-weight: 700!important;
 }
 
-.navbar-title {
+.navbar-brand {
     display: flex;
 }
 
 .navbar-brand > img {
-    width: 10rem;
+    width: 13rem;
 }
 
 .fa-shopping-bag, .card-title, .total-amount, .confirmation-title {
@@ -45,6 +45,24 @@ h1, h4 {
 .card-img {
     height: 16rem;
     object-fit: cover;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.4rem;
+}
+
+.card-price {
+    font-size: 1.1rem;
+    color: white;
+    background-color: #DB4F66;
+    border-radius: 5px;
+    padding: 5px 12px;
 }
 
 .product {
@@ -175,6 +193,10 @@ h1, h4 {
 @media all and (max-width: 991px) {
     .product {
         margin: 2rem 1rem;
+    }
+
+    .cart-form {
+        margin-top: 3rem;
     }
 }
 
