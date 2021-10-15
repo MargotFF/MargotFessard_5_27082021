@@ -9,8 +9,8 @@ const teddies = [
   },
   {
     "colors": [
-      "Pale brown",
-      "Dark brown",
+      "Peru",
+      "Saddlebrown",
       "White"
     ],
     "_id": "5beaa8bf1c9d440000a57d94",

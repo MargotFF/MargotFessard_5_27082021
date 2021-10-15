@@ -9,16 +9,50 @@ function fetchTeddy(id) {
   .then(function(response) {
     if (response.ok) {
       return response.json();
+    } else if (response.id === undefined) {
+      throw new Error("This product id does not exist");
     } else {
-      throw new Error("Network response error");
+      throw new Error("Network response failed");
     }
   })
   .then(function(teddy) {
-    console.log(teddy);
     displayTeddy(teddy);
+    
+    // Add an event listener to add product to cart
+    let addToCart = document.querySelector(".add-to-cart");
+    addToCart.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Create the variable with the added product details
+      let addedTeddy = { 
+        ...teddy,
+        price: teddy.price/100,
+        quantity: 1,
+      };
+
+      // Check if product already exists in the cart
+      let cart = JSON.parse(localStorage.getItem("orn:cart")) || [];
+      let ifExists = false;
+      let existingItem;
+
+      for (i = 0; i < cart?.length; i++) {
+        if (cart[i]._id === addedTeddy._id) {
+          ifExists = true;
+          existingItem = cart[i];
+        }
+      }
+
+      // Add the product to the cart
+      if (ifExists === false) {
+        cart.push(addedTeddy);
+        localStorage.setItem("orn:cart", JSON.stringify(cart));
+      }
+
+      // window.location.href = "cart.html"
+    });
   })
   .catch(function(err) {
-    console.error('Fetch error:', err)
+      console.error(err);
   });
 }
 
@@ -31,14 +65,14 @@ function displayTeddy(teddy) {
 
   // Create HTML elements contained in product details
   let productImage = document.createElement("img");
-  let productTitle = document.createElement("h3");
+  let productName = document.createElement("h3");
   let productPrice = document.createElement("h5");
   let productText = document.createElement("p");
 
-  // Set the related attribute value to the HTML elements
+  // Set the related attribute values to the HTML elements
   productImage.src = teddy.imageUrl;
-  productTitle.textContent = teddy.name;
-  productPrice.textContent = (teddy.price/100).toLocaleString('fr-FR', {style:'currency', currency:'EUR'});
+  productName.textContent = teddy.name;
+  productPrice.textContent = (teddy.price/100) + " €";
   productText.textContent = teddy.description;
   
   // Loop over colors array to set each color attribute
@@ -56,16 +90,15 @@ function displayTeddy(teddy) {
 
   // Style the product details by adding CSS/Bootstrap classes to the HTML elements
   productImage.classList.add("product-img");
-  productTitle.classList.add("product-title", "card-title");
+  productName.classList.add("product-title", "card-title");
   productPrice.classList.add("product-price");
   productText.classList.add("product-text", "mt-4");
 
   // Append the HTML elements in the product details
   productLeft.appendChild(productImage);
-  productTop.appendChild(productTitle);
+  productTop.appendChild(productName);
   productTop.appendChild(productPrice);
   productTop.appendChild(productText);
 }
 
 fetchTeddy(id);
-

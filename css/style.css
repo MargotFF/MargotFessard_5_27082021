@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -14,7 +15,16 @@ a:hover {
     color: black;
 }
 
-h1, h4 {
+button:focus {
+    outline: none;
+}
+
+h1 {
+    font-family: 'Rancho', cursive;    
+    font-size: 3.6rem;
+}
+
+h4 {
     font-weight: 700!important;
 }
 
@@ -68,6 +78,15 @@ h1, h4 {
     background-color: #DB4F66;
     border-radius: 5px;
     padding: 5px 12px;
+}
+
+.empty-cart {
+    font-size: 1.1rem;
+    margin-top: 6rem;
+}
+
+.sad-emoticon {
+    font-size: 1.4rem;
 }
 
 .teddy {
@@ -125,7 +144,13 @@ h1, h4 {
     transform: scale(1.1);
 }
 
-.cart-product, .cart-counter {
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.cart-product, .cart-quantity {
     display: flex;
     align-items: center;
 }
@@ -138,9 +163,10 @@ h1, h4 {
     object-fit: cover;
 }
 
-.counter-btn{
+.quantity-btn{
     width: 40px;
     height: 40px;
+    border: none;
     border-radius: 50%;
     background-color: #F3E8F0;
     display: flex;
@@ -150,7 +176,7 @@ h1, h4 {
     transition: all .3s;
 }
 
-.counter-btn:hover {
+.quantity-btn:hover {
     background-color: #DB4F66;
     color: #ffffff;
 }
@@ -161,13 +187,21 @@ h1, h4 {
     justify-content: center;
 }
 
-.cart-remove {
+.btn-remove {
     font-size: 0.8rem;
     color: #DB4F66;
+    background-color: #FFFFFF;
+    border: none;
+    text-decoration: underline;
     transition: all .3s;
 }
 
-.cart-remove:hover {
+.cart-remove-item-btn {
+    text-align: left;
+    margin-left: -0.3rem;
+}
+
+.cart-remove-btn:hover, .cart-remove-item-btn:hover {
     color: #af3f52;
 }
 
@@ -176,6 +210,11 @@ h1, h4 {
     background-color: #F3E8F0;
     border-radius: 5px;
     padding: 10px 20px;
+}
+
+.required::after {
+    content: " *";
+    color: red;
 }
 
 .confirmation-box {
