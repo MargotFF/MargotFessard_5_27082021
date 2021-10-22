@@ -82,7 +82,17 @@ hr {
     background-color: #EEEEEE;
 }
 
-.card:hover .card-body, .card:hover .card-img {
+.card {
+    transition: all 600ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    filter: brightness(1.09);
+    border: 1px solid #DB4F66;
+}
+
+/* .card:hover .card-body, .card:hover .card-img {
     -webkit-filter: blur(5px);
     filter: blur(5px);
     transition: all 1s ease;
@@ -91,9 +101,9 @@ hr {
 .card:hover .card-hover-block {
     opacity: 1;
     transition: all 1s ease;
-}
+} */
 
-.card-hover-block {
+/* .card-hover-block {
     font-size: 3rem;
     font-weight: 200;
     width: 80px;
@@ -111,7 +121,7 @@ hr {
     top: 42%;
     left: 38%;
     opacity: 0;
-}
+} */
 
 .card-img {
     height: 16rem;

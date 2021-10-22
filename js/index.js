@@ -42,7 +42,7 @@ function displayTeddies(teddy) {
     cardPrice.textContent = (teddy.price/100) + " €";
     cardText.textContent = teddy.description;
     cardHoverBlock.textContent = "+";
-    cardHoverBlock.href = "product.html?id=" + teddy._id;
+    // cardHoverBlock.href = "product.html?id=" + teddy._id;
 
     // Style the teddies cards by adding CSS/Bootstrap classes to the HTML elements
     cardColumn.classList.add("col-12", "col-md-6", "col-lg-4", "my-4");
@@ -54,13 +54,13 @@ function displayTeddies(teddy) {
     cardTitle.classList.add("card-title", "mb-0");
     cardPrice.classList.add("card-price");
     cardText.classList.add("card-text");
-    cardHoverBlock.classList.add("card-hover-block");
+    // cardHoverBlock.classList.add("card-hover-block");
 
     // Append the HTML elements in the card element
     cardList.appendChild(cardColumn);
     cardColumn.appendChild(cardItem);
     cardItem.appendChild(cardLink);
-    cardItem.appendChild(cardHoverBlock);
+    // cardItem.appendChild(cardHoverBlock);
     cardLink.appendChild(cardImage);
     cardLink.appendChild(cardBody);
     cardBody.appendChild(cardTop);
