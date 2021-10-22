@@ -1,11 +1,9 @@
-let urlApi = new URL ("http://localhost:3000/api/teddies/");
-
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
 
 // Fetch teddy's attributes via its ID from the API
 function fetchTeddy(id) {
-  fetch(urlApi + id)
+  fetch("http://localhost:3000/api/teddies/" + id)
   .then(function(response) {
     if (response.ok) {
       return response.json();
@@ -59,17 +57,20 @@ function fetchTeddy(id) {
 // Display the teddy's details in the product page
 function displayTeddy(teddy) {
   // Get HTML elements contained in product details
+  let productIdentifier = document.querySelector(".product-identifier");
   let productLeft = document.querySelector(".product-left");
   let productTop = document.querySelector(".product-top");
   let productColors = document.querySelector(".product-colors");
 
   // Create HTML elements contained in product details
   let productImage = document.createElement("img");
-  let productName = document.createElement("h3");
-  let productPrice = document.createElement("h5");
+  let productName = document.createElement("h2");
+  let productPrice = document.createElement("h3");
   let productText = document.createElement("p");
 
   // Set the related attribute values to the HTML elements
+  productIdentifier.innerHTML = "<strong>" + teddy.name + "</strong>";
+  productIdentifier.style.color = "#DB4F66";
   productImage.src = teddy.imageUrl;
   productName.textContent = teddy.name;
   productPrice.textContent = (teddy.price/100) + " €";
@@ -91,7 +92,7 @@ function displayTeddy(teddy) {
   // Style the product details by adding CSS/Bootstrap classes to the HTML elements
   productImage.classList.add("product-img");
   productName.classList.add("product-title", "card-title");
-  productPrice.classList.add("product-price");
+  productPrice.classList.add("product-price", "h5");
   productText.classList.add("product-text", "mt-4");
 
   // Append the HTML elements in the product details

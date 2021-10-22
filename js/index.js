@@ -30,22 +30,22 @@ function displayTeddies(teddy) {
     let cardImage = document.createElement("img");
     let cardBody = document.createElement("div");
     let cardTop = document.createElement("div");
-    let cardTitle = document.createElement("h5");
+    let cardTitle = document.createElement("h4");
     let cardPrice = document.createElement("span");
     let cardText = document.createElement("p");
+    let cardHoverBlock = document.createElement("a");
 
     // Set the related attribute values to the HTML elements
     cardLink.href = "product.html?id=" + teddy._id;
     cardImage.src = teddy.imageUrl;
-    // cardTitle.appendChild(document.createTextNode(teddy.name));
     cardTitle.textContent = teddy.name;
-    // cardPrice.appendChild(document.createTextNode((teddy.price/100).toLocaleString('fr-FR', {style:'currency', currency:'EUR'})));
     cardPrice.textContent = (teddy.price/100) + " €";
-    // cardText.appendChild(document.createTextNode(teddy.description));
     cardText.textContent = teddy.description;
+    cardHoverBlock.textContent = "+";
+    cardHoverBlock.href = "product.html?id=" + teddy._id;
 
     // Style the teddies cards by adding CSS/Bootstrap classes to the HTML elements
-    cardColumn.classList.add("col-12", "col-lg-4", "my-4");
+    cardColumn.classList.add("col-12", "col-md-6", "col-lg-4", "my-4");
     cardItem.classList.add("card", "shadow", "card-bg");
     cardLink.classList.add("card-link");
     cardImage.classList.add("card-img-top", "card-img");
@@ -54,11 +54,13 @@ function displayTeddies(teddy) {
     cardTitle.classList.add("card-title", "mb-0");
     cardPrice.classList.add("card-price");
     cardText.classList.add("card-text");
+    cardHoverBlock.classList.add("card-hover-block");
 
     // Append the HTML elements in the card element
     cardList.appendChild(cardColumn);
     cardColumn.appendChild(cardItem);
     cardItem.appendChild(cardLink);
+    cardItem.appendChild(cardHoverBlock);
     cardLink.appendChild(cardImage);
     cardLink.appendChild(cardBody);
     cardBody.appendChild(cardTop);

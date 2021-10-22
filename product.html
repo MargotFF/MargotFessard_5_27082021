@@ -32,9 +32,10 @@
               <div id="navbarContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link mr-4" href="cart.html">
+                    <a class="nav-link" href="cart.html">
                       <i class="fa fa-shopping-bag mr-2"></i>Panier
                     </a>
+                  <li class="nav-link nav-separator">|</li>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="index.html">Retour à l'accueil</a>
@@ -53,30 +54,28 @@
 
     <div class="container">
       <div class="row teddy">
+        <div class="col-12 product-path">
+          <a href="index.html"><u>Nos ours en peluche</u> /</a>
+          <span class="product-identifier"></span>
+        </div>
         <div class="col-12 col-lg-6">
           <div class="product-left shadow card-bg">
-            <!-- <img src="" alt="" class="product-img"> -->
           </div>
         </div>
         <div class="col-12 col-lg-6">
           <div class="product-right mt-4 mt-lg-0">
-            <div class="product-top">
-              <!-- <h3 class="product-title card-title">Winnie</h3>
-              <h5 class="product-price">12€</h5>
-              <p class="product-text mt-4">Un ours en peluche fait main avec amour dans une matière unique</p> -->
-            </div>
+            <div class="product-top"></div>
             <div class="product-bottom">
               <div class="product-attribute">
-                <h6>Couleurs disponibles</h6>
+                <span class="h6">Couleurs disponibles</span>
                 <div class="product-attributes mt-3">
-                  <div class="row product-colors ">
-                    <!-- <div class="col-3">
-                      <div class="product-color shadow"></div>
-                    </div> -->
-                  </div>
+                  <div class="row product-colors"></div>
                 </div>
               </div>
-              <button class="add-to-cart pink-button mt-5" type="button">Ajouter au panier</button>
+              <div class="product-btns">
+                <button class="add-to-cart pink-button mt-5" type="button">Ajouter au panier</button>
+                <a class= "check-cart-btn white-btn text-center ml-4" href="cart.html">Voir mon panier</a>
+              </div>
             </div>
           </div>
         </div>
@@ -88,10 +87,10 @@
     <!-- FOOTER -->
 
     <div class="bg-dark mt-5">
-      <div class="container">
+      <div class="container product-footer">
         <div class="row pt-4 pb-3">
           <div class="col">
-            <div class="text-center h4 pt-3">
+            <div class="text-center h4 font-weight-bold pt-3">
               <a href="#"><i class="fa fa-facebook text-white light-hover px-2"></i></a>
               <a href="#"><i class="fa fa-twitter text-white light-hover px-2"></i></a>
               <a href="#"><i class="fa fa-instagram text-white light-hover px-2"></i></a>

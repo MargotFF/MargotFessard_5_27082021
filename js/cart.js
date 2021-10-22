@@ -22,7 +22,7 @@ function getCartItem(i) {
   let cartItem = document.createElement("div");
   let cartItemLink = document.createElement("a");
   let cartItemImage = document.createElement("img");
-  let cartItemName = document.createElement("h6");
+  let cartItemName = document.createElement("h3");
   let cartItemQuantity = document.createElement("div");
   let cartItemIncreaseQuantity = document.createElement("button");
   let cartItemDecreaseQuantity = document.createElement("button");
@@ -46,7 +46,7 @@ function getCartItem(i) {
   cartItemRow.classList.add("row", "mb-4", "item-row");
   cartItem.classList.add("col-4", "cart-product");
   cartItemImage.classList.add("cart-img", "mr-3");
-  cartItemName.classList.add("m-0");
+  cartItemName.classList.add("m-0", "h6");
   cartItemQuantity.classList.add("col-4", "cart-quantity");
   cartItemIncreaseQuantity.classList.add("quantity-btn");
   cartItemDecreaseQuantity.classList.add("quantity-btn");
@@ -114,7 +114,7 @@ function getCartItem(i) {
     emptyCartDisplay();
   })
 
-  // - Remove cart
+  // - Clear cart
   let cartRemove = document.querySelector(".cart-remove-btn");
   cartRemove.addEventListener("click", function () {
     const teddies = JSON.parse(localStorage.getItem("orn:cart"));
@@ -138,8 +138,9 @@ function getCartItem(i) {
   cartItemTotal.appendChild(cartItemPrice);
   cartItemTotal.appendChild(cartItemRemove);
 
-  // Confirm and send order details
+  // Confirm and send order details : 
   let order = document.getElementById("confirm-order")
+  // Add event listener to confirm the order in cart 
   order.addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -152,6 +153,7 @@ function getCartItem(i) {
       email: document.getElementById("inputEmail").value,
     }
 
+    // Check if the form filled in by the user is valid
     const isFormValid = (
       isEmailValid(contact.email)
       || isEmpty(contact.firstName) 
@@ -168,6 +170,7 @@ function getCartItem(i) {
         products.push(item._id);
       }
       
+      // Send the order (POST request) containing the contact object and the products array
       fetch('http://localhost:3000/api/teddies/order', {
         method: 'POST',
         headers: {
@@ -221,19 +224,23 @@ function cartTotalPrice() {
   document.querySelector(".total-amount").innerHTML = totalPrice + " €";
 }
 
+// Clear the cart in local storage
 function clearCart() {
   localStorage.setItem("orn:cart", "[]");
 }
 
+// Get the index of the product in localStorage
 function getIndex(itemId) {
   const cart = JSON.parse(localStorage.getItem("orn:cart"));
   return cart.findIndex((item) => item._id === itemId);
 }
 
+// Check if the email field filled in by the user has a valid format
 function isEmailValid(inputValue) {
   return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(inputValue) 
 }
 
+// Check if the fields have been filled in by the user
 function isEmpty(inputValue) {
   return inputValue === "";
 }

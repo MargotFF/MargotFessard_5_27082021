@@ -46,26 +46,16 @@
 
     <!-- SHOPPING CART -->
 
-    <div class="container">
-      <h4 class="text-center mt-5 mb-5">MON PANIER</h4>
-      <div class="empty-cart text-center">Mon panier est vide... <span class="sad-emoticon">&#128532;</span></div>
+    <div class="container cart-container">
+      <h2 class="cart-title text-center h4 font-weight-bold">VOTRE PANIER</h2>
+      <hr>
+      <div class="empty-cart text-center">
+        <i class="far fa-frown sad-icon"></i>
+        <p class="empty-cart-message">Votre panier est tristement vide...</p>
+        <a class= "pink-button" href="index.html">Reprendre mon shopping</a>
+      </div>
       <div class="row cart">
         <div class="col-12 col-lg-7 cart-items">
-          <!-- <div class="row mb-4">
-            <div class="col-4 cart-product">
-              <img src="images/teddy_1.jpg" class="cart-img mr-3"/>
-              <h6 class="m-0">Winnie</h6>
-            </div>
-            <div class="col-4 cart-quantity">
-              <div class="quantity-btn">-</div>
-              <div class="quantity-total mx-3">1</div>
-              <div class="quantity-btn">+</div>
-            </div>
-            <div class="col-4 cart-price">
-              <div class="cart-amount">50€</div>
-              <button class="cart-remove" type="button">Retirer du panier</button>
-            </div>
-          </div> -->
           <div class="row cart-left-bottom">
             <div class="col-12">
               <button class="btn-remove cart-remove-btn mt-3">Vider mon panier</button>
@@ -78,6 +68,7 @@
         </div>
         <div class="col-12 col-lg-5 cart-form">
           <form class="contact">
+            <legend class="form-title">Merci de saisir vos coordonnées pour valider votre commande :</legend>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputFirstName" class="required">Prénom</label>
@@ -96,25 +87,14 @@
               <label for="inputAddress" class="required">Adresse</label>
               <input type="text" class="form-control" id="inputAddress" placeholder="e.g. 1 rue Kléber" required>
             </div>
-            <!-- <div class="form-group">
-              <label for="inputAddress2">Complément d'adresse</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Bâtiment, appartement, étage">
-            </div> -->
-            <!-- <div class="form-row">
-              <div class="form-group col-md-4">
-                <label for="inputZip" class="required">Code postal</label>
-                <input type="text" class="form-control" id="inputZip" placeholder="e.g. 75000" required>
-              </div>
-              <div class="form-group">
-                <label for="inputCity" class="required">Ville</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="e.g. Paris" required>
-              </div>
-            </div> -->
             <div class="form-group">
               <label for="inputCity" class="required">Ville</label>
               <input type="text" class="form-control" id="inputCity" placeholder="e.g. Paris" required>
             </div>
-            <button id="confirm-order" class="pink-button mt-3" type="submit">Valider ma commande</button>
+            <div class="cart-btns">
+              <button id="confirm-order" class="pink-button mt-3" type="submit">Valider ma commande</button>
+              <a class= "white-btn text-center" href="index.html">Continuer mon shopping</a>
+            </div>
           </form>
         </div>
       </div>
@@ -128,7 +108,7 @@
       <div class="container">
         <div class="row pt-4 pb-3">
           <div class="col">
-            <div class="text-center h4 pt-3">
+            <div class="text-center h4 font-weight-bold pt-3">
               <a href="#"><i class="fa fa-facebook text-white light-hover px-2"></i></a>
               <a href="#"><i class="fa fa-twitter text-white light-hover px-2"></i></a>
               <a href="#"><i class="fa fa-instagram text-white light-hover px-2"></i></a>
