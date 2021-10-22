@@ -16,41 +16,19 @@ function fetchTeddy(id) {
   .then(function(teddy) {
     displayTeddy(teddy);
     
-    // Add an event listener to add product to cart
+    // Add an event listener when click on Add to cart button
     let addToCart = document.querySelector(".add-to-cart");
     addToCart.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      // Create the variable with the added product details
-      let addedTeddy = { 
-        ...teddy,
-        price: teddy.price/100,
-        quantity: 1,
-      };
-
-      // Check if product already exists in the cart
-      let cart = JSON.parse(localStorage.getItem("orn:cart")) || [];
-      let ifExists = false;
-      let existingItem;
-
-      for (i = 0; i < cart?.length; i++) {
-        if (cart[i]._id === addedTeddy._id) {
-          ifExists = true;
-          existingItem = cart[i];
-        }
-      }
-
-      // Add the product to the cart
-      if (ifExists === false) {
-        cart.push(addedTeddy);
-        localStorage.setItem("orn:cart", JSON.stringify(cart));
-      }
-
-      // window.location.href = "cart.html"
+      addProductToCart(event, teddy);
     });
   })
   .catch(function(err) {
       console.error(err);
+      if (err.message === "This product id does not exist") {
+        displayProductNotFindPage();
+      } else {
+        displayErrorPage()
+      }
   });
 }
 
@@ -100,6 +78,36 @@ function displayTeddy(teddy) {
   productTop.appendChild(productName);
   productTop.appendChild(productPrice);
   productTop.appendChild(productText);
+}
+
+// Add product to cart
+function addProductToCart(event, teddy) {
+  event.preventDefault();
+
+  // Create the variable with the added product details
+  let addedTeddy = { 
+    ...teddy,
+    price: teddy.price/100,
+    quantity: 1,
+  };
+
+  // Check if product already exists in the cart
+  let cart = JSON.parse(localStorage.getItem("orn:cart")) || [];
+  let ifExists = false;
+  let existingItem;
+
+  for (i = 0; i < cart?.length; i++) {
+    if (cart[i]._id === addedTeddy._id) {
+      ifExists = true;
+      existingItem = cart[i];
+    }
+  }
+
+  // Add the product to the cart
+  if (ifExists === false) {
+    cart.push(addedTeddy);
+    localStorage.setItem("orn:cart", JSON.stringify(cart));
+  }
 }
 
 fetchTeddy(id);

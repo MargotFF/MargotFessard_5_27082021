@@ -53,6 +53,14 @@
     <!-- PRODUCT -->
 
     <main class="container">
+      <div class="product-not-found error-display" hidden>
+        <img class="bear-icon" src="images/sad_bear.svg" alt="Ours triste">
+        Nous sommes désolés, cet ours en peluche n'existe pas...
+      </div>
+      <div class="product-error error-display" hidden>
+        <img class="bear-icon" src="images/dead_bear.svg" alt="Ours K.O">
+        Oups... Une erreur s'est produite.<br>Pour continuer, tentez de rafraîchir la page ou retournez à l'accueil.
+      </div>
       <div class="row teddy">
         <div class="col-12 product-path">
           <a href="index.html"><u>Nos ours en peluche</u> /</a>
@@ -107,6 +115,8 @@
               <li class="list-inline-item footer-dot">&middot;</li>
               <li class="list-inline-item"><a href="#" class="text-white light-hover">Contact</a></li>
             </ul>
+            <div class="not-found-icon-credit icon-credit text-white text-center" hidden><a class="text-white" href="https://thenounproject.com/search/?q=sad+bear&i=442417">"dead"</a> icon by Julia Amadeo from the Noun Project.</div>
+            <div class="error-icon-credit icon-credit text-white text-center" hidden><a class="text-white" href="https://thenounproject.com/search/?q=sad+bear&i=442414">"Sad"</a> icon by Julia Amadeo from the Noun Project.</div>
           </div>
         </div>
       </div>
@@ -115,6 +125,7 @@
     <!-- END FOOTER -->
 
     <!-- SCRIPT JS -->
+    <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/product.js"></script>
 
     <!-- jQuery, Popper.js, Bootstrap JS -->

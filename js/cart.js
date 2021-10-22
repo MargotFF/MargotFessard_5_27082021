@@ -1,7 +1,5 @@
-let cart = JSON.parse(localStorage.getItem("orn:cart"));
-
 // Display empty/filled cart
-function emptyCartDisplay() {
+function displayEmptyCart() {
   const localStorageContent = localStorage.getItem("orn:cart");
   if (localStorageContent === null || localStorageContent === "[]" || localStorageContent === undefined || localStorageContent === "{}") {
     document.querySelector(".empty-cart").hidden = false;
@@ -13,6 +11,7 @@ function emptyCartDisplay() {
 
 // Get added product to cart
 function setUpCart(i) {
+  let cart = JSON.parse(localStorage.getItem("orn:cart"));
 
   // Get HTML element that contains added products in the cart
   let cartItems = document.querySelector(".cart-items");
@@ -80,31 +79,24 @@ function setUpCart(i) {
   cartItemPrice.id = "total-product-" + cart[i]._id;
 
   // Add event listeners : 
-  cartItemIncreaseQuantity.addEventListener("click", function (event) {
-    increaseItemQuantity(event);
-  })
+  cartItemIncreaseQuantity.addEventListener("click", increaseItemQuantity);
 
-  cartItemDecreaseQuantity.addEventListener("click", function (event) {
-    decreaseItemQuantity(event);
-  })
+  cartItemDecreaseQuantity.addEventListener("click", decreaseItemQuantity);
 
   cartItemRemove.addEventListener("click", function (event) {  
     removeItem(event, cartItems);
-  })
+  });
 
   let cartRemove = document.querySelector(".cart-remove-btn");
-  cartRemove.addEventListener("click", function () {
-    emptyCart();
-  })
+  cartRemove.addEventListener("click", emptyCart);
 
   let order = document.getElementById("confirm-order")
-  order.addEventListener("click", function (event) {
-    confirmOrderDetails(event);
-  })
+  order.addEventListener("click", confirmOrderDetails);
 }
 
 // Display added product(s) to cart
 function displayCart() {
+  let cart = JSON.parse(localStorage.getItem("orn:cart"));
   for (let i = 0; i < cart?.length; i++) {
     setUpCart(i);
   }
@@ -179,17 +171,17 @@ function removeItem(event, cartItems) {
   cartItems.removeChild(cartItemRowToRemove);
   localStorage.setItem("orn:cart", JSON.stringify(cart));
   cartTotalPrice();
-  emptyCartDisplay();
+  displayEmptyCart();
 }
 
 // Empty cart
 function emptyCart() {
-  const teddies = JSON.parse(localStorage.getItem("orn:cart"));
-  for (let i = 0; i < teddies?.length; i++) {
+  const cart = JSON.parse(localStorage.getItem("orn:cart"));
+  for (let i = 0; i < cart?.length; i++) {
     document.getElementById("teddy-" + i)?.remove();
   }
   clearLocalStorageCart();
-  emptyCartDisplay();
+  displayEmptyCart();
 }
 
 // Check if the email field filled in by the user has a valid format
@@ -228,6 +220,7 @@ function confirmOrderDetails(event) {
   // Send the order details if the form is valid
   if (isFormValid) {
     // Push the cart products in array (to send the order)
+    let cart = JSON.parse(localStorage.getItem("orn:cart"));
     let products = [];
     for (item of cart) {
       products.push(item._id);
@@ -265,5 +258,5 @@ function confirmOrderDetails(event) {
   }
 }
 
-emptyCartDisplay();
+displayEmptyCart();
 displayCart();
