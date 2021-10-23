@@ -1,7 +1,7 @@
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
 
-// Fetch teddy's attributes via its ID from the API
+// Fetch product attributes via its ID from the API
 function fetchTeddy(id) {
   fetch("http://localhost:3000/api/teddies/" + id)
   .then(function(response) {
@@ -25,14 +25,14 @@ function fetchTeddy(id) {
   .catch(function(err) {
       console.error(err);
       if (err.message === "This product id does not exist") {
-        displayProductNotFindPage();
+        displayProductNotFoundPage();
       } else {
         displayErrorPage()
       }
   });
 }
 
-// Display the teddy's details in the product page
+// Display product details in the product page
 function displayTeddy(teddy) {
   // Get HTML elements contained in product details
   let productIdentifier = document.querySelector(".product-identifier");
@@ -84,7 +84,7 @@ function displayTeddy(teddy) {
 function addProductToCart(event, teddy) {
   event.preventDefault();
 
-  // Create the variable with the added product details
+  // Create an object with the added product details
   let addedTeddy = { 
     ...teddy,
     price: teddy.price/100,
@@ -94,12 +94,10 @@ function addProductToCart(event, teddy) {
   // Check if product already exists in the cart
   let cart = JSON.parse(localStorage.getItem("orn:cart")) || [];
   let ifExists = false;
-  let existingItem;
 
   for (i = 0; i < cart?.length; i++) {
     if (cart[i]._id === addedTeddy._id) {
       ifExists = true;
-      existingItem = cart[i];
     }
   }
 

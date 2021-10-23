@@ -1,4 +1,4 @@
-// Fetch teddies attributes from the API
+// Fetch products attributes from the API
 function fetchTeddies() {
   fetch("http://localhost:3000/api/teddies")
     .then(function(response) {
@@ -18,12 +18,12 @@ function fetchTeddies() {
     });
 }
 
-// Display each teddy and its details in a cards grid
+// Display each product and its details in a cards grid
 function displayTeddies(teddy) {
     // Get HTML element contained in teddies cards
     let cardList = document.querySelector(".teddies");
     
-    // Create HTML elements contained in teddies cards
+    // Create HTML elements contained in products cards
     let cardColumn = document.createElement("div");
     let cardItem = document.createElement("div");
     let cardLink = document.createElement("a");
@@ -33,7 +33,6 @@ function displayTeddies(teddy) {
     let cardTitle = document.createElement("h4");
     let cardPrice = document.createElement("span");
     let cardText = document.createElement("p");
-    let cardHoverBlock = document.createElement("a");
 
     // Set the related attribute values to the HTML elements
     cardLink.href = "product.html?id=" + teddy._id;
@@ -41,9 +40,8 @@ function displayTeddies(teddy) {
     cardTitle.textContent = teddy.name;
     cardPrice.textContent = (teddy.price/100) + " €";
     cardText.textContent = teddy.description;
-    cardHoverBlock.textContent = "+";
 
-    // Style the teddies cards by adding CSS/Bootstrap classes to the HTML elements
+    // Style the products cards by adding CSS/Bootstrap classes to the HTML elements
     cardColumn.classList.add("col-12", "col-md-6", "col-lg-4", "my-4");
     cardItem.classList.add("card", "shadow", "card-bg");
     cardLink.classList.add("card-link");

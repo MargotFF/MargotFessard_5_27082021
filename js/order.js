@@ -1,10 +1,11 @@
+// Display order confirmation details in the order page
 function displayOrderConfirmation() {
   let order = JSON.parse(localStorage.getItem("orn:order"));
 
   // Get HTML element that contains confirmation order message
   let orderConfirmation = document.querySelector(".confirmation-box");
 
-  // Create HTML elements for the confirmation order
+  // Create HTML elements for the confirmation order message
   let orderConfirmationIcon = document.createElement("i");
   let orderConfirmationTitle = document.createElement("h2");
   let orderConfirmationMessage = document.createElement("p");
@@ -44,9 +45,10 @@ function displayOrderConfirmation() {
   orderConfirmation.appendChild(orderConfirmationButton);
 }
 
-function clearOrder() {
+// Clear the order in localStorage
+function clearLocalStorageOrder() {
   localStorage.setItem("orn:order", "[]");
 }
 
 displayOrderConfirmation();
-clearOrder();
+clearLocalStorageOrder();

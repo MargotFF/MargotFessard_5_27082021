@@ -116,7 +116,7 @@ function cartTotalPrice() {
   document.querySelector(".total-amount").innerHTML = totalPrice + " €";
 }
 
-// Clear the cart in local storage
+// Clear the cart in localStorage
 function clearLocalStorageCart() {
   localStorage.setItem("orn:cart", "[]");
 }

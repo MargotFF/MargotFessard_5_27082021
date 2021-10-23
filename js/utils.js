@@ -1,4 +1,4 @@
-function displayProductNotFindPage() {
+function displayProductNotFoundPage() {
 	document.querySelector(".teddy").hidden = true;
 	document.querySelector(".product-not-found").hidden = false;
 	document.querySelector(".not-found-icon-credit").hidden = false;
