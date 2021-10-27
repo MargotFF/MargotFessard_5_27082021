@@ -186,7 +186,7 @@ function emptyCart() {
 
 // Check if the email field filled in by the user has a valid format
 function isEmailValid(inputValue) {
-  return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(inputValue) 
+  return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(inputValue);
 }
 
 // Check if the fields have been filled in by the user
@@ -252,9 +252,8 @@ function confirmOrderDetails(event) {
     })
     .catch(function(err) {
       console.error(err)
+      alert("Aie aie aie... Le formulaire est incorrect !\nPensez à renseigner et vérifier toutes vos informations afin de pouvoir valider votre commande.");
     }); 
-  } else {
-    alert("Oups, le formulaire est incorrect... Pensez à bien renseigner et vérifier toutes vos informations afin de pouvoir valider votre commande.");
   }
 }
 
