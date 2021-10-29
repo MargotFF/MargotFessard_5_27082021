@@ -47,8 +47,12 @@ h1 {
     font-weight: 500;
 }
 
-.fa-shopping-bag, .card-title, .total-amount, .confirmation-title, .light-hover:hover {
+.fa-shopping-bag, .fa-angle-double-left, .card-title, .total-amount, .confirmation-title, .light-hover:hover {
     color: #DB4F66 !important;
+}
+
+.fa-angle-double-left {
+    display: none !important;
 }
 
 .bg-pink {
@@ -213,7 +217,7 @@ hr {
 }
 
 .empty-cart-message {
-    margin-bottom: 4rem !important;
+    margin-bottom: 3rem !important;
 }
 
 .cart {
@@ -355,6 +359,24 @@ hr {
 }
 
 @media all and (max-width: 991px) {
+    #navbarContent {
+        position: absolute;
+        left: auto;
+        right: 0;
+        width: 12.8rem;
+        padding: 10px 22px 10px 22px;
+        background-color: #F3E8F0;
+        border-radius: 5px;
+    }
+
+    .navbar-nav {
+        line-height: 1;
+    }
+
+    .fa-angle-double-left {
+        display: inline-block !important;
+    }
+
     .nav-separator, .home-description > br {
        display: none;
     }
@@ -393,6 +415,10 @@ hr {
     .navbar-brand > img {
         width: 10rem;
         padding-top: 0;
+    }
+
+    .nav-item, .fa-shopping-bag, .fa-angle-double-left {
+        font-size: 0.92rem;
     }
 
     .home-description {
@@ -439,6 +465,10 @@ hr {
         font-size: 2.2rem;
     }
 
+    .pink-button {
+        padding: 10px 15px;
+    }
+
     .footer-links {
         display: flex;
         flex-direction: column;
@@ -460,6 +490,10 @@ hr {
 
     .navbar-brand > img, .bear-icon {
         width: 9rem;
+    }
+
+    .nav-item, .fa-shopping-bag, .fa-angle-double-left {
+        font-size: 0.87rem;
     }
 
     .home-title, .cart-title {
@@ -542,12 +576,25 @@ hr {
         width: 8rem;
     }
 
+    #navbarContent {
+        width: 7rem;
+        padding: 10px 15px;
+    }
+
+    .nav-item {
+        line-height: 1.25;
+    }
+
     .home-description {
         font-size: 1.2rem;
     }
 
     .pink-text {
         font-size: 1.9rem;
+    }
+
+    hr {
+        width: 120px;
     }
 
     .card-img {
@@ -582,6 +629,12 @@ hr {
         width: 2.4rem;
     }
 
+    .pink-button, .white-btn {
+        font-size: 0.9rem;
+        padding: 10px 10px;
+        display: inline-block;
+    }
+
     .cart-product {
         display: flex;
         flex-direction: column;
@@ -599,6 +652,10 @@ hr {
     .total-amount {
         display: flex;
         align-items: center;
+    }
+
+    .empty-cart-message {
+        margin-bottom: 2rem !important;
     }
 }
 

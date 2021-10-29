@@ -53,7 +53,7 @@ function displayTeddy(teddy) {
   productName.textContent = teddy.name;
   productPrice.textContent = (teddy.price/100) + " €";
   productText.textContent = teddy.description;
-  
+
   // Loop over colors array to set each color attribute
   for (let i = 0; i < teddy.colors.length; i++) {
     // Create, style and append the HTML element for the Boostrap grid
@@ -78,6 +78,14 @@ function displayTeddy(teddy) {
   productTop.appendChild(productName);
   productTop.appendChild(productPrice);
   productTop.appendChild(productText);
+
+  // Set the button add to cart depending on if product already exists in the cart
+  let cart = JSON.parse(localStorage.getItem("orn:cart")) || [];
+  for (i = 0; i < cart?.length; i++) {
+    if (cart[i]._id === teddy._id) {
+      addedToCartButton();
+    }
+  }
 }
 
 // Add product to cart
@@ -106,6 +114,19 @@ function addProductToCart(event, teddy) {
     cart.push(addedTeddy);
     localStorage.setItem("orn:cart", JSON.stringify(cart));
   }
+
+  addedToCartButton();
+}
+
+// Change the button content when product added to cart
+function addedToCartButton() {
+  let addToCart = document.querySelector(".add-to-cart");
+  addToCart.innerHTML = '<i class="fas fa-check"></i>Ajouté au panier !';
+  addToCart.style.backgroundColor = "#3DE087";
+  addToCart.style.borderColor = "#3DE087";
+  addToCart.style.color = "black";
+  let addToCartIcon = document.querySelector(".fa-check");
+  addToCartIcon.style.paddingRight = "5px";
 }
 
 fetchTeddy(id);

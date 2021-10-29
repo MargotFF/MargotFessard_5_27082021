@@ -190,8 +190,8 @@ function isEmailValid(inputValue) {
 }
 
 // Check if the fields have been filled in by the user
-function isEmpty(inputValue) {
-  return inputValue === "";
+function isFilled(inputValue) {
+  return inputValue !== "";
 }
 
 // Confirm and send order details : 
@@ -210,11 +210,11 @@ function confirmOrderDetails(event) {
   // Check if the form filled in by the user is valid
   const isFormValid = (
     isEmailValid(contact.email)
-    || isEmpty(contact.firstName) 
-    || isEmpty(contact.lastName)
-    || isEmpty(contact.address)
-    || isEmpty(contact.city)
-    || isEmpty(contact.email)
+    && isFilled(contact.firstName)
+    && isFilled(contact.lastName)
+    && isFilled(contact.address)
+    && isFilled(contact.city)
+    && isFilled(contact.email)
   )
 
   // Send the order details if the form is valid
@@ -252,8 +252,9 @@ function confirmOrderDetails(event) {
     })
     .catch(function(err) {
       console.error(err)
-      alert("Aie aie aie... Le formulaire est incorrect !\nPensez à renseigner et vérifier toutes vos informations afin de pouvoir valider votre commande.");
     }); 
+  } else {
+    alert("Aie aie aie... Le formulaire est incorrect !\nPensez à renseigner et vérifier toutes vos informations afin de pouvoir valider votre commande.");
   }
 }
 
