@@ -2,10 +2,18 @@
 
 Implémentation du MVP de la partie front-end d'__Orinoco__, un site de e-commerce qui propose plusieurs applications thématiques par catégorie de produits. Cette version présente la catégorie des ours en peluche faits à la main. Le site a été réalisé avec Bootstrap et JavaScript.
 
-Page hébergée sur GitHub Pages : https://margotff.github.io/MargotFessard_5_27082021/
-
-### Prerequisites
-You will need to have Node and npm installed locally on your machine.
+### Prérequis
+Vous aurez besoin d'avoir `Node.js` et `NPM` installés en local sur votre machine.
 
 ### Installation
-Clone this repo. From within the project folder, run npm install. You can then run the server with node server. The server should run on localhost with default port 3000. If the server runs on another port for any reason, this is printed to the console when the server starts, e.g. Listening on port 3001.
+Clôner ce dépôt. À partir du dossier du projet, exécutez :
+```
+npm install
+``` 
+Vous pouvez ensuite lancer le serveur avec la commande :
+```
+node server
+``` 
+Le serveur devrait fonctionner en localhost avec le port 3000 par défaut. Si le serveur fonctionnait sur un autre port pour une raison mystérieuse, vous le verriez inscrit sur la console au démarrage du serveur (e.g. `Listening on port 3001`).
+
+Enfin, pour tester l'application web, rendez-vous sur : https://margotff.github.io/MargotFessard_5_27082021/.
